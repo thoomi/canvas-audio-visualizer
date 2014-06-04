@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body
+            {
+                margin: 0;
+                padding: 0;
+				/*margin-top: 3%;*/
+                background-color: #000000;
+                overflow: hidden;
+            }
+            #EqualizerView {
+                background-color: #000000;
+            }
+            #EqualizerViewShadow {
+                background-color: #000000;
+                /*opacity: 0.2;*/
+                -webkit-transform: scaleY(-1);
+            }
+            .center {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <canvas id="EqualizerView" class="center"></canvas>
+            <canvas id="EqualizerViewShadow" class="center"></canvas>
+        </center>
+
+
+        <script type="text/javascript" src="assets/js/beatdetektor.js"></script>
+        <script type="text/javascript" src="assets/js/visuals.js"></script>
+        <script type="text/javascript" src="assets/js/visualizer.js"></script>
+        <script type="text/javascript">
+            var AudioContext = new webkitAudioContext();
+            var Visuals =
+            [
+                new BarVisual("EqualizerView")
+            ]
+
+            var Visualizer   = new ZB.AudioVisualizer(AudioContext, Visuals, "audiofile", "assets/music/avelino-herrera-hojas.mp3");
+            //var Visualizer   = new ZB.AudioVisualizer(AudioContext, Visuals, "microphone");
+
+            //initialize equalizer on window load event
+            window.addEventListener('load', Visualizer.start);
+        </script>
+    </body>
+</html>

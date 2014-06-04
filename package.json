@@ -1,0 +1,17 @@
+{
+  "name": "canvas-visualizer",
+  "version": "0.0.1",
+  "description": "A simple canvas music and microphone visualizer",
+  "keywords": [
+    "canvas",
+    "visualizer",
+    "microphone",
+    "music"
+  ],
+  "author": "Thomas Blank",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browser-sync": "~0.9.1"
+  }
+}
